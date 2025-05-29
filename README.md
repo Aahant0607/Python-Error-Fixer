@@ -37,54 +37,9 @@ This project demonstrates a fully functional prototype, featuring a Gradio-based
 ├── requirements.txt # Required dependencies
 └── README.md # This file
 
-yaml
-Copy
-Edit
-
----
-
-## 🚀 Quick Start
-
-### Step 1: Install Dependencies
-
-```bash
-pip install gitpython transformers gradio --quiet
-Step 2: Clone QuixBugs Dataset
-python
-Copy
-Edit
-import git, os
-if not os.path.exists("Code-Refactoring-QuixBugs"):
-    git.Repo.clone_from("https://github.com/RumbleJack56/Code-Refactoring-QuixBugs.git", "Code-Refactoring-QuixBugs")
-Step 3: Launch Interactive UI
-bash
-Copy
-Edit
-python app.py
-Choose a Python file from the dropdown or paste your buggy code.
-
-Set temperature for generation (low = deterministic).
-
-Press "Fix Bug" to see the repaired code, bug classification, and test result.
 
 🧪 Batch Evaluation
-To evaluate all buggy programs and log results:
 
-bash
-Copy
-Edit
-python evaluate.py
-Output will be saved to results.txt in this format:
-
-yaml
-Copy
-Edit
-📊 Evaluation Results
-
-knapsack.py — Import failed: invalid syntax (temp_fixed.py, line 1)
-...
-✅ Passed: 0/50
-❌ Failed: 50
 🐞 Bug Classes (Heuristic Mapping)
 The system uses string heuristics to classify bugs into 14 common types:
 
@@ -127,29 +82,7 @@ Copy
 Edit
 You are an expert Python developer. The following Python code has a single-line bug:
 <code block> ``` Please identify and fix the bug, preserving the original algorithm and style. Return ONLY the fixed code inside a ```python ... ``` code block. ```
-❗ Current Limitations
-🚫 0/50 programs passed automated testing in batch evaluation. This result arising as output is based on the incorrect codes sent for evaluation and not for the improvised codes so that portion is to be added.
 
-❌ Common Failures:
-
-Invalid syntax in LLM output (temp_fixed.py, line 1)
-
-No test functions detected in multiple files
-
-LLM hallucinating incorrect syntax or missing edge case logic
-
-📉 Needs prompt refinement, stricter output filtering, and potential fine-tuning.
-
-📊 Sample Evaluation Output (From results.txt)
-txt
-Copy
-Edit
-knapsack.py — Import failed: invalid syntax (temp_fixed.py, line 1)
-reverse_linked_list_test.py — Import failed: unterminated triple-quoted string
-quicksort.py — No test functions found.
-...
-✅ Passed: 0/50
-❌ Failed: 50
 🔮 Future Work
  Improve Prompt Engineering: Restrict output to valid Python only.
 
