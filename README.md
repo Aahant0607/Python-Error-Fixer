@@ -2,7 +2,7 @@
 # 🐍 Python-Error-Fixer
 
 > **An LLM-Powered Agent for Automated Single-Line Bug Repair in Python Programs from the QuixBugs Benchmark**  
-> **Created for AIMS-DTU Research Internship Round 2 — Automated Code Correction Task**
+> **Automated Code Correction Task**
 
 ---
 
